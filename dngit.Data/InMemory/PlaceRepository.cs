@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace dngit.Data.InMemory
 {
-    class PlaceRepository : IPlaceRepository
+    public class PlaceRepository : IPlaceRepository
     {
         List<Place> Places = new List<Place>
         {
@@ -27,9 +27,24 @@ namespace dngit.Data.InMemory
             return Task.FromResult(Places.FirstOrDefault(p => p.Id == id));
         }
 
-        public Task<List<Place>> All()
+        public Task<List<Place>> AllAsync()
         {
             return Task.FromResult(Places);
+        }
+
+        public Task<Place> Add(Place place)
+        {
+            var _newPlace = new Place()
+            {
+                Id = 1111,
+                Name = place.Name,
+                Description = place.Description,
+                Founded = place.Founded,
+                Location = place.Location,
+                Owner = place.Owner,
+            };
+            Places.Add(_newPlace);
+            return Task.FromResult(_newPlace);
         }
 
          

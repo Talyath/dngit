@@ -12,7 +12,7 @@ namespace dngit.Models
         public DngitSchema(IDependencyResolver resolver):base(resolver)
         {
             Query = resolver.Resolve<DngitQuery>();
-            //Mutation
+            Mutation = resolver.Resolve<DngitMutation>();
         }
 
     }

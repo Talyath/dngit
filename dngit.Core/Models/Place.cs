@@ -12,7 +12,8 @@ namespace dngit.Core.Models
         public string Description { get; set; }
         public DateTime Founded { get; set; }
         public string Owner { get; set; }
-        public Rating Rating { get; set; }
+        public double OverAllRating { get; set; }
+        public List<Rating> Ratings { get; set; }
 
     }
 }

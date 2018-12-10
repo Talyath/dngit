@@ -18,7 +18,7 @@ namespace dngit.Models
             
             Field<ListGraphType<PlaceType>>(
                 "places",
-                resolve: context => placeRepository.All());
+                resolve: context => placeRepository.AllAsync());
         }
     }
 }

@@ -9,7 +9,8 @@ namespace dngit.Core.Data
     public interface IPlaceRepository
     {
         Task<Place> Get(int id);
-        Task<List<Place>> All();
+        Task<List<Place>> AllAsync();
 
+        Task<Place> Add(Place place);
     }
 }

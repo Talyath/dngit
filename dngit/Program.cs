@@ -17,26 +17,26 @@ namespace dngit
     {
         public static void Main(string[] args)
         {
-            //CreateWebHostBuilder(args).Build().Run();
+            CreateWebHostBuilder(args).Build().Run();
 
-            var schema = Schema.For(@"
-                type Query {
-                    hello: String
-                }
-            ");
+            //var schema = Schema.For(@"
+            //    type Query {
+            //        hello: String
+            //    }
+            //");
 
-            var json = schema.Execute((x) =>
-            {
-                x.Query = "{ hello }";
-                x.Root = new { Hello = "Hello World!" };
-            });
+            //var json = schema.Execute((x) =>
+            //{
+            //    x.Query = "{ hello }";
+            //    x.Root = new { Hello = "Hello World!" };
+            //});
 
-            Console.WriteLine(json);
+            //Console.WriteLine(json);
 
         }
 
-        //public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-        //    WebHost.CreateDefaultBuilder(args)
-        //        .UseStartup<Startup>();
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>();
     }
 }
